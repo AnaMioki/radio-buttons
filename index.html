@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8, que suporta caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz com que o site se ajuste corretamente em diferentes tamanhos de tela -->
+    <title>Custom Radio</title> <!-- Título da página que aparece na aba do navegador -->
+    <!-- Anexa o arquivo CSS para aplicar estilos ao HTML -->
+    <link rel="stylesheet" href="/style.css"> 
+    <!-- Comentário sobre a alteração da tipografia -->
+</head>
+<body>
+    <!-- Container principal para as opções -->
+    <div class="caixa">
+        <!-- Título da seção -->
+        <div class="titulo">Select your option</div>
+        <!-- Container para as opções de seleção -->
+        <div class="opcoes">
+            <!-- Inputs de rádio: esses são os botões de seleção -->
+            <input type="radio" name="escolha" id="opcao1">
+            <input type="radio" name="escolha" id="opcao2">
+            <input type="radio" name="escolha" id="opcao3">
+            <input type="radio" name="escolha" id="opcao4">
+            
+            <!-- Labels associadas aos inputs de rádio -->
+            <!-- Quando clicado, o label seleciona o input de rádio correspondente -->
+            <label for="opcao1" class="opcao1">
+                <!-- Elemento visual do botão de seleção -->
+                <div class="seletor"></div>
+                <!-- Texto que aparece ao lado do botão de seleção -->
+                <div class="texto">Gamer</div>
+            </label>
+            
+            <label for="opcao2" class="opcao2">
+                <div class="seletor"></div>
+                <div class="texto">Youtuber</div>
+            </label>
+            
+            <label for="opcao3" class="opcao3">
+                <div class="seletor"></div>
+                <div class="texto">Student</div>
+            </label>
+            
+            <label for="opcao4" class="opcao4">
+                <div class="seletor"></div>
+                <div class="texto">Developer</div>
+            </label>
+        </div>
+    </div>
+</body>
+</html>

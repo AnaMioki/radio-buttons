@@ -1,0 +1,118 @@
+/* importando api de fonte do googlefonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* retirando pré-definições do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    /* o box-sizing garante que o padding e bordas fiquem dentro do tamnho estabelecido no código. o padding e bordas são incluidos na contagem da largura&altura  */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilizamos tanto o <html> quanto o <body> para garantir que ambos ocupem 100% da altura da janela do navegador 
+   e para que o conteúdo fique centralizado, independentemente do tamanho da tela */
+
+/* <html> é o elemento raiz que envolve toda a página, garantindo que a base do layout ocupe toda a altura disponível */
+html,
+body {
+    /* <body> contém o conteúdo visível da página. Ao aplicar grid e height aqui,
+       asseguramos que o conteúdo seja centralizado no meio da tela */
+    display: grid;
+    /* Usa grid para facilitar a centralização do conteúdo */
+    height: 100%;
+    /* Faz com que tanto <html> quanto <body> ocupem a altura total da tela */
+    place-items: center;
+    /* Centraliza o conteúdo dentro da grade, no centro da tela */
+}
+
+.caixa {
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.caixa .titulo {
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 65px;
+    text-align: center;
+    background: #333;
+    border-radius: 10px 10px 0 0;
+}
+
+.caixa .opcoes {
+    padding: 20px 40px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.caixa .opcoes label {
+    display: flex;
+    /* Ativa o Flexbox, que facilita o alinhamento e distribuição dos itens dentro do label */
+
+    height: 53px;
+    /*aumenta a altura, logo também aumenta o espaçamento entre as opções*/
+    width: 100%;
+    align-items: center;
+    border: 1px solid lightgrey;
+    /*divisórias*/
+    border-radius: 50px;
+    margin: 10px 0;
+    padding-left: 20px;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.caixa .opcoes label .seletor {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative; /* Permite ajustar a posição do seletor em relação ao seu lugar original */
+    /* Também serve como ponto de referência para posicionar elementos filhos com position: absolute; */
+}
+
+.opcoes label .seletor::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    width: 9px;
+    height: 9px;
+    /* background: #333; */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#opcao1:checked ~ .opcao1 .seletor::before, 
+#opcao2:checked ~ .opcao2 .seletor::before, 
+#opcao3:checked ~ .opcao3 .seletor::before, 
+#opcao4:checked ~ .opcao4 .seletor::before{
+    background: #333;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.caixa .opcoes label .texto {
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+}
+
+#opcao1:checked ~ .opcao1, #opcao2:checked ~ .opcao2, #opcao3:checked ~ .opcao3, #opcao4:checked ~ .opcao4{
+    background: #333;
+    border-color: #333;
+}
+
+#opcao1:checked ~ .opcao1 .texto, #opcao2:checked ~ .opcao2 .texto, #opcao3:checked ~ .opcao3 .texto, #opcao4:checked ~ .opcao4 .texto{
+    color: #fff;
+}
+
+.caixa .opcoes input[type="radio"]{
+    display: none;
+}
